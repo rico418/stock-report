@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📊 A股收盘播报 06/28 18:19</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;
+       background:#0d1117; color:#e6edf3; font-size:14px; }
+.header { background:linear-gradient(135deg,#1a1f2e,#0d1117);
+           padding:16px; border-bottom:1px solid #30363d; }
+.header h1 { font-size:17px; font-weight:600; color:#fff; }
+.header .time { font-size:12px; color:#8b949e; margin-top:4px; }
+.tabs { display:flex; background:#161b22; border-bottom:1px solid #30363d; }
+.tab { flex:1; padding:12px 4px; text-align:center; font-size:13px;
+        color:#8b949e; cursor:pointer; border-bottom:2px solid transparent;
+        transition:all 0.2s; }
+.tab.active { color:#58a6ff; border-bottom-color:#58a6ff; }
+.content { display:none; padding:12px; }
+.content.active { display:block; }
+.card { background:#161b22; border:1px solid #30363d; border-radius:10px;
+         padding:14px; margin-bottom:12px; }
+.card-title { font-size:13px; color:#8b949e; margin-bottom:10px;
+               font-weight:500; letter-spacing:0.5px; }
+.index-row { display:flex; justify-content:space-between;
+              align-items:center; padding:6px 0;
+              border-bottom:1px solid #21262d; }
+.index-row:last-child { border-bottom:none; }
+.index-name { font-size:13px; color:#e6edf3; }
+.index-val { font-size:13px; font-weight:600; }
+.stock-item { padding:10px 0; border-bottom:1px solid #21262d; }
+.stock-item:last-child { border-bottom:none; }
+.stock-top { display:flex; justify-content:space-between; align-items:center; }
+.stock-name { font-size:14px; font-weight:600; color:#e6edf3; }
+.stock-chg { font-size:14px; font-weight:700; }
+.stock-detail { font-size:12px; color:#8b949e; margin-top:3px; }
+.alert-badge { background:#ff4444; color:#fff; font-size:10px;
+                padding:1px 5px; border-radius:4px; margin-left:5px; }
+.total-bar { background:#0d1117; border-radius:6px; padding:10px 12px;
+              margin-top:8px; display:flex; justify-content:space-between; }
+.total-label { font-size:12px; color:#8b949e; }
+.total-val { font-size:15px; font-weight:700; }
+.hot-item { display:flex; justify-content:space-between;
+             align-items:center; padding:8px 0;
+             border-bottom:1px solid #21262d; }
+.hot-item:last-child { border-bottom:none; }
+.hot-rank { width:22px; height:22px; border-radius:50%; background:#21262d;
+             display:flex; align-items:center; justify-content:center;
+             font-size:11px; font-weight:700; color:#8b949e; flex-shrink:0; }
+.hot-rank.top3 { background:#f0a500; color:#000; }
+.hot-info { flex:1; margin:0 10px; }
+.hot-name { font-size:13px; font-weight:600; }
+.hot-code { font-size:11px; color:#8b949e; }
+.hot-chg { font-size:13px; font-weight:700; }
+.analysis-block { margin-bottom:14px; }
+.analysis-label { font-size:12px; color:#58a6ff; font-weight:600;
+                   margin-bottom:6px; padding-bottom:4px;
+                   border-bottom:1px solid #21262d; }
+.analysis-text { font-size:13px; color:#c9d1d9; line-height:1.6; }
+.tip { background:#1c2128; border-left:3px solid #f0a500;
+        padding:8px 10px; border-radius:0 6px 6px 0;
+        font-size:12px; color:#c9d1d9; margin-top:8px; line-height:1.5; }
+.refresh { text-align:center; padding:16px; color:#8b949e; font-size:12px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📊 A股收盘播报 06/28 18:19</h1>
+  <div class="time">更新时间：2026-06-28 18:30</div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab(0)">📊 持仓</div>
+  <div class="tab" onclick="switchTab(1)">🔥 热榜</div>
+  <div class="tab" onclick="switchTab(2)">💡 分析</div>
+</div>
+<div id="tab0" class="content active">
+    <div class="card">
+      <div class="card-title">大盘指数</div>
+      
+        <div class="index-row">
+          <span class="index-name">上证指数</span>
+          <span class="index-val" style="color:#00bb00">4027.26 ▼2.26%</span>
+        </div>
+        <div class="index-row">
+          <span class="index-name">科创50</span>
+          <span class="index-val" style="color:#00bb00">2032.28 ▼1.65%</span>
+        </div>
+    </div>
+    <div class="card">
+      <div class="card-title">A股持仓</div>
+      
+        <div class="stock-item">
+          <div class="stock-top">
+            <span class="stock-name">兴业银锡<span class="alert-badge">⚡异动</span></span>
+            <span class="stock-chg" style="color:#00bb00">▼6.43%</span>
+          </div>
+          <div class="stock-detail">
+            现价 33.01 · 持100股 · 市值3301.0 · 盈亏
+            <span style="color:#00bb00">-575元(-14.8%)</span>
+          </div>
+        </div>
+        <div class="stock-item">
+          <div class="stock-top">
+            <span class="stock-name">豫光金铅<span class="alert-badge">⚡异动</span></span>
+            <span class="stock-chg" style="color:#00bb00">▼6.40%</span>
+          </div>
+          <div class="stock-detail">
+            现价 15.93 · 持100股 · 市值1593.0 · 盈亏
+            <span style="color:#00bb00">-71元(-4.3%)</span>
+          </div>
+        </div>
+        <div class="stock-item">
+          <div class="stock-top">
+            <span class="stock-name">紫金矿业</span>
+            <span class="stock-chg" style="color:#00bb00">▼1.72%</span>
+          </div>
+          <div class="stock-detail">
+            现价 25.1 · 持400股 · 市值10040.0 · 盈亏
+            <span style="color:#00bb00">-3524元(-26.0%)</span>
+          </div>
+        </div>
+        <div class="stock-item">
+          <div class="stock-top">
+            <span class="stock-name">储能电池ETF易方达</span>
+            <span class="stock-chg" style="color:#888">—</span>
+          </div>
+          <div class="stock-detail">
+            现价 N/A · 持900股 · 市值0 · 盈亏
+            <span style="color:#888">+0元(+0.0%)</span>
+          </div>
+        </div>
+        <div class="stock-item">
+          <div class="stock-top">
+            <span class="stock-name">煤炭ETF国泰</span>
+            <span class="stock-chg" style="color:#888">—</span>
+          </div>
+          <div class="stock-detail">
+            现价 N/A · 持1100股 · 市值0 · 盈亏
+            <span style="color:#888">+0元(+0.0%)</span>
+          </div>
+        </div>
+      <div class="total-bar">
+        <span class="total-label">A股总浮盈亏</span>
+        <span class="total-val" style="color:#00bb00">-4170元 (-27.9%)</span>
+      </div>
+    </div>
+    
+        <div class="card">
+          <div class="card-title">美股持仓</div>
+          
+            <div class="stock-item">
+              <div class="stock-top">
+                <span class="stock-name">英特尔 (INTC)</span>
+                <span class="stock-chg" style="color:#00bb00">▼3.42%</span>
+              </div>
+              <div class="stock-detail">
+                现价 128.32 · 持1股 · 盈亏
+                <span style="color:#00bb00">-3USD(-2.5%)</span>
+              </div>
+            </div>
+            <div class="stock-item">
+              <div class="stock-top">
+                <span class="stock-name">迈威尔科技 (MRVL)</span>
+                <span class="stock-chg" style="color:#00bb00">▼5.15%</span>
+              </div>
+              <div class="stock-detail">
+                现价 266.77 · 持1股 · 盈亏
+                <span style="color:#00bb00">-35USD(-11.7%)</span>
+              </div>
+            </div>
+        </div></div>
+<div id="tab1" class="content"><div class="card"><div class="card-title">暂无热榜数据</div></div></div>
+<div id="tab2" class="content">
+    <div class="card">
+      
+      <div class="tip">⚠️ 以上分析由AI生成，仅供参考，不构成投资建议</div>
+    </div></div>
+<div class="refresh">数据来源：akshare / DeepSeek · 仅供参考</div>
+<script>
+function switchTab(i) {
+  document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.content').forEach((c,j) => c.classList.toggle('active', i===j));
+}
+</script>
+</body>
+</html>
